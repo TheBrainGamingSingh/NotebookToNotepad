@@ -1,0 +1,63 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Files</title>
+	<meta charset="utf-8">
+	<style>
+		html
+		{
+		}
+			body
+			{
+				font-family: Roboto, sans-serif;
+				color: #0f3c4b;
+				background-image: url('/static/images/pic2.jpg');
+				background-size: cover;
+				padding: 5rem 1.25rem; /* 80 20 */
+				font-family: 'Arial', sans-serif;
+			}
+			
+			.dropzone {
+				align-self: center;
+				width: 450px;
+				height: 300px;
+				border: 2px dashed #773E01;
+				color: #773E01;
+				line-height: 300px;
+				text-align: center;
+				font-size: 18px;
+				background-color: #E6DDCE;
+				margin: 0 auto;
+				border-radius: 10px;
+			}
+			.dropzone.dragover {
+				border-color: #000;
+				color: #000;
+			}
+			.NTN {
+				align-self: center;
+				text-align: center;
+				color: #030000;
+				font-family: "Consolas";
+				font-size: 24px;
+			}
+	</style>
+
+</head>
+<body>
+	<div id="uploads"></div>
+	<div class="NTN">
+	<h1>NOTEBOOK TO NOTEPAD<h1>
+	</div>
+	<div class="dropzone" id="dropzone">
+		<form method="post" enctype="multipart/form-data" action = "/">
+			{%csrf_token%}
+			<label for="myfile">Select a file:</label>
+			<input type="file" id="myfile" name="myfile">
+			<input type="submit">
+		</form>
+	</div>
+	
+</body>
+</html>
